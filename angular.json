@@ -65,10 +65,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "edocs-front:build:production"
+              "buildTarget": "edocs-front:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             },
             "development": {
-              "buildTarget": "edocs-front:build:development"
+              "buildTarget": "edocs-front:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -13,6 +13,6 @@ export class PreviewerComponent {
 
   @Input() previewId: string | undefined;
 
-  apiUrl = 'http://localhost:3000/api/report/';
+  apiUrl = 'api/report/';
   constructor() { }
 }

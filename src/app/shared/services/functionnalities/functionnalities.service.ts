@@ -9,6 +9,6 @@ export class FunctionnalitiesService {
   constructor(private http : HttpClient) { }
   
   fetchSoftwares() {
-    return this.http.get<any>('http://localhost:3000/softwares/1/versions/1/functionnalities');
+    return this.http.get<any>('api/softwares/1/versions/1/functionnalities');
   }
 }

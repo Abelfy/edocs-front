@@ -22,9 +22,9 @@
       "dom"
     ],
     "paths": {
-      "@app/*": ["./src/app/*"],
       "@shared/*": ["./src/app/shared/*"],
-      "@reducers/*": ["./src/app/reducers/*"]    
+      "@reducers/*": ["./src/app/reducers/*"],    
+      "@models/*": ["./src/app/models/*"],    
     }
   },
   "angularCompilerOptions": {

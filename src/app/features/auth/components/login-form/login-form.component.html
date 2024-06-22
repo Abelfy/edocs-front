@@ -1,0 +1,26 @@
+<div class="container">
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [formControl]="email" required />
+        <mat-icon matSuffix>email</mat-icon>
+        @if (email.invalid) {
+        <mat-error >
+            {{ getEmailErrorMessage() }}
+        </mat-error>
+        }
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput [formControl]="password" required />
+        <mat-icon matSuffix>lock</mat-icon>
+        @if (password.invalid) {
+        <mat-error>
+            {{ getPasswordErrorMessage() }}
+        </mat-error>
+        }
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="onSubmit()">
+        {{ submitLabel }}
+    </button>
+</div>

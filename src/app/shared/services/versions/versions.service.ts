@@ -9,6 +9,6 @@ export class VersionsService {
   constructor(private http : HttpClient) { }
   
   fetchVersions(id : number) {
-    return this.http.get<any>(`http://localhost:3000/softwares/${id}/versions/`);
+    return this.http.get<any>(`api/softwares/${id}/versions/`);
   }
 }
