@@ -12,6 +12,7 @@ import { SoftwareEffects } from '@reducers/softwares/softwares.effects';
 import { provideHttpClient } from '@angular/common/http';
 import { VersionEffects } from '@reducers/versions/versions.effects';
 import { FunctionnalityEffects } from '@reducers/functionnalities/functionnalities.effects';
+import { AuthEffects } from '@reducers/auth/auth.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -21,6 +22,6 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideStore(reducers, { metaReducers }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode()}),
-    provideEffects([SoftwareEffects, VersionEffects, FunctionnalityEffects]),
+    provideEffects([AuthEffects, SoftwareEffects, VersionEffects, FunctionnalityEffects]),
     provideRouterStore()]
 };

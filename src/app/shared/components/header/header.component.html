@@ -1,26 +1,25 @@
 <div class="header">
-    <mat-toolbar>
+    <mat-toolbar class="nav">
+        <button mat-icon-button aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
         <span>E-Docs</span>
+        @if(user$ | async; as user) {
+        <span> - </span>
+        <span>{{ user.firstName }} {{ user.lastName }}</span>
+        }
+
         <span class="spacer"></span>
-        <ul class="nav">
-            <li>
-                @if(isLoggedIn$ | async) {
-                <div>
-                    <a>Logout</a>
-                </div>
-                }
-                @else {
-                <div>
-                    <a routerLink="/login">Login</a>
-                </div>
-                }
-            </li>
-        </ul>
-        <button mat-icon-button aria-label="Example icon-button with heart icon">
-            <mat-icon>favorite</mat-icon>
+        {{ (isLoggedIn$ | async) }}
+        @if((isLoggedIn$ | async)===true) {
+        <button mat-icon-button aria-label="Example icon-button with menu icon" (click)="onLogout()">
+            <mat-icon>login</mat-icon>
         </button>
-        <button mat-icon-button aria-label="Example icon-button with share icon">
-            <mat-icon>share</mat-icon>
+        }
+        @else {
+        <button mat-icon-button aria-label="Example icon-button with menu icon" routerLink="/login">
+            <mat-icon>logout</mat-icon>
         </button>
+        }
     </mat-toolbar>
 </div>

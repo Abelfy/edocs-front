@@ -26,12 +26,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex: 1 1 auto;
 }
 
-div.container {
+div.container-column {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     height: 100%;
     padding : 1.5rem;
+    gap: 1.5rem;
 }
 
 div.container-row {
@@ -40,4 +41,8 @@ div.container-row {
   justify-content: space-between;
   row-gap: 2rem;
   height: 100%;
+}
+
+w-30 {
+  width: 30%;
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VersionPageComponent } from './version-page.component';
+import { VersionsPage } from './versions.page';
 
 describe('VersionPageComponent', () => {
-  let component: VersionPageComponent;
-  let fixture: ComponentFixture<VersionPageComponent>;
+  let component: VersionsPage;
+  let fixture: ComponentFixture<VersionsPage>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VersionPageComponent]
+      imports: [VersionsPage]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VersionPageComponent);
+    fixture = TestBed.createComponent(VersionsPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

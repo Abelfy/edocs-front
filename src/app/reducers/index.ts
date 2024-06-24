@@ -5,6 +5,7 @@ import { ActionReducer, ActionReducerMap, MetaReducer } from '@ngrx/store';
 import { versionsReducer } from './versions/versions.reducer';
 import { softwaresReducer } from './softwares/softwares.reducer';
 import { functionnalitiesReducer } from './functionnalities/functionnalities.reducer';
+import { authReducer } from './auth/auth.reducer';
 
 export interface AppState { }
 
@@ -20,6 +21,7 @@ function debug(reducer : ActionReducer<any>) : ActionReducer<any> {
 
 export const reducers: ActionReducerMap<AppState> = {
   router: routerReducer,
+  auth: authReducer,
   softwares : softwaresReducer,
   versions : versionsReducer,
   functionnalities: functionnalitiesReducer

@@ -2,13 +2,14 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'edocs-login-form',
   standalone: true,
-  imports: [CommonModule,MatInputModule,MatIconModule,MatButtonModule, ReactiveFormsModule],
+  imports: [CommonModule,MatCardModule,MatInputModule,MatIconModule,MatButtonModule, ReactiveFormsModule],
   templateUrl: './login-form.component.html',
   styleUrl: './login-form.component.scss'
 })

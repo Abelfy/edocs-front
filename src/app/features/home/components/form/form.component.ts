@@ -10,13 +10,14 @@ import { selectFunctionnalities, selectFunctionnalitiesHasLoaded } from '../../.
 import { fetchSoftware } from '@reducers/softwares/softwares.actions';
 import { fetchVersions } from '@reducers/versions/versions.actions';
 import { fetchFunctionnalities } from '@reducers/functionnalities/functionnalities.actions';
+import { MatCardModule } from '@angular/material/card';
 
 
 
 @Component({
   selector: 'edocs-form',
   standalone: true,
-  imports: [CommonModule, MatSelectModule, FormFunctionnalitiesListComponent],
+  imports: [CommonModule,MatCardModule, MatSelectModule, FormFunctionnalitiesListComponent],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })

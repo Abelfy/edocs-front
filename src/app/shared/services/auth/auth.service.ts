@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from '@models/user.model';
 import { Subject, catchError, tap } from 'rxjs';
 
@@ -7,21 +8,18 @@ import { Subject, catchError, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-
-  private readonly authenticated = new Subject<boolean>();
-  authenticated$ = this.authenticated.asObservable();
-
-  constructor(private readonly httpClient: HttpClient) { }
+  constructor(private readonly httpClient: HttpClient, private readonly router: Router) { }
 
   login(email: string, password: string) {
     return this.httpClient.post<User>('api/auth/login', { email, password });
   }
 
   isAuthenticated() {
-    return this.httpClient.get<boolean>('api/auth').pipe(
-    tap(() => {
-      this.authenticated.next(true);
-    }),
-    catchError(() => [false]));
+    return this.httpClient.get<User>('api/auth').pipe(
+      catchError(() => [null]));
+  }
+
+  logout() {
+    return this.httpClient.post('api/auth/logout', {});
   }
 }

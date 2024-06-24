@@ -1,2 +1,13 @@
 <edocs-header></edocs-header>
-<router-outlet />
+<mat-sidenav-container class="container" autosize>
+    <mat-sidenav mode="side" opened class="sidenav">
+        <mat-nav-list>
+            <a mat-list-item [routerLink]='["/"]' >Home</a>
+            <a mat-list-item [routerLink]='["/","versions"]'>Versions</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet />
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<mat-toolbar class="footer">Footer</mat-toolbar>
